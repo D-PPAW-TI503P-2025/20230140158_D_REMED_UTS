@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top App Bar -->
+  <header class="appbar">
+    <div class="appbar__left">
+      <div class="logo">📚</div>
+      <div>
+        <div class="appbar__title">Library System</div>
+        <div class="appbar__subtitle">UCP 1 — Backend + Frontend sederhana</div>
+      </div>
+    </div>
+
+    <div class="appbar__right">
+      <span class="pill" id="apiBaseText"></span>
+      <button class="btn btn--ghost" id="btnRefresh">Refresh</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card__header">
+        <h2>Daftar Buku</h2>
+        <p class="muted">Data dari endpoint <code>GET /api/books</code></p>
+      </div>
+
+      <div class="tablewrap" id="booksWrap">Loading...</div>
+    </section>
+
+    <section class="grid2">
+      <section class="card">
+        <div class="card__header">
+          <h2>Admin — Tambah Buku</h2>
+          <p class="muted">Header otomatis: <code>x-user-role: admin</code></p>
+        </div>
+
+        <form id="formAddBook" class="form">
+          <label class="field">
+            <span>Title</span>
+            <input id="title" type="text" placeholder="Contoh: Clean Code" required />
+          </label>
+
+          <label class="field">
+            <span>Author</span>
+            <input id="author" type="text" placeholder="Contoh: Robert C. Martin" required />
+          </label>
+
+          <label class="field">
+            <span>Stock</span>
+            <input id="stock" type="number" value="1" min="0" />
+          </label>
+
+          <button class="btn btn--primary" type="submit">Tambah Buku</button>
+        </form>
+
+        <pre class="result" id="addBookResult"></pre>
+      </section>
+
+      <section class="card">
+        <div class="card__header">
+          <h2>User — Pinjam Buku</h2>
+          <p class="muted">
+            Header otomatis: <code>x-user-role: user</code>, <code>x-user-id: 1</code>
+          </p>
+        </div>
+
+        <form id="formBorrow" class="form">
+          <label class="field">
+            <span>Book ID</span>
+            <input id="borrowBookId" type="number" value="1" min="1" required />
+          </label>
+
+          <div class="row">
+            <label class="field">
+              <span>Latitude</span>
+              <input id="latitude" type="number" step="any" placeholder="-6.2088" required />
+            </label>
+
+            <label class="field">
+              <span>Longitude</span>
+              <input id="longitude" type="number" step="any" placeholder="106.8456" required />
+            </label>
+          </div>
+
+          <div class="row row--buttons">
+            <button class="btn btn--secondary" type="button" id="btnGetLocation">
+              Ambil Lokasi
+            </button>
+            <button class="btn btn--primary" type="submit">
+              Pinjam
+            </button>
+          </div>
+        </form>
+
+        <pre class="result" id="borrowResult"></pre>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <span class="muted"></span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
