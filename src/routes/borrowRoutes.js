@@ -1,8 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.post("/", (req, res) => {
-  res.json({ message: "POST /api/borrow (coming soon)" });
-});
+const borrowController = require("../controllers/borrowController");
+const { requireUser, requireAdmin } = require("../middlewares/roleMiddleware");
+
+// Admin: lihat semua log
+router.get("/", requireAdmin, borrowController.getAllBorrowLogs);
+
+// User: borrow buku
+router.post("/", requireUser, borrowController.borrowBook);
 
 module.exports = router;

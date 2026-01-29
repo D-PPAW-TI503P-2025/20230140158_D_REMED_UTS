@@ -1,3 +1,4 @@
+const cors = require("cors");
 require("dotenv").config();
 const express = require("express");
 
@@ -10,6 +11,7 @@ const borrowRoutes = require("./src/routes/borrowRoutes");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // health check
 app.get("/", (req, res) => {
