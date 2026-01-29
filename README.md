@@ -22,3 +22,14 @@ POST pinjam buku + simpan lokasi
 
 GET borrow log
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1f7d2933-96bf-46ec-8673-0b69fda79376" />
+
+TAMPILAN WEB
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2921ffdf-b417-4559-aa38-b8cd2c0bc68b" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/03e757a9-46d8-41fb-bbca-0ad14f16941b" />
+
+DATABASE
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6dc1254c-23d1-472d-a7fe-a8b0dc69f431" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/465ef290-7c71-49ce-ba93-f0a17d7873fb" />
+
